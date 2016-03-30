@@ -1,4 +1,22 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Curator -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Curator %></h1>
+</div>
 
-<%= link_to 'Edit', edit_curator_path(@curator) %> |
-<%= link_to 'Back', curators_path %>
+<div class="fieldset">
+  <dl>
+  </dl>
+</div>
+
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              curators_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_curator_path(@curator), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              curator_path(@curator),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
+
