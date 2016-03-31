@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :curators
   get 'landings/index'
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords", omniauth_callbacks: "users/omniauth_callbacks"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-  resources :curators
-  resources :users, :only => [:show]
+  # See how all your routes lay out with "rake routes".  resources :users, :only => [:show]
   # You can have the root of your site routed with "root"
   root 'landings#index'
+  get 'curators/:id', to: "curators#show", as: 'curator'
+  get 'users/:id', to: "users#show", as: 'user'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
