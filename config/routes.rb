@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :curatorxes
   devise_for :curators
   get 'landings/index'
 
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'landings#index'
   get 'curators/:id', to: "curators#show", as: 'curator'
+  get 'curatorxes/:id', to: "curatorxes#show", as: 'curatorx'
   get 'users/:id', to: "users#show", as: 'user'
 
   # Example of regular route:
