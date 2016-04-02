@@ -1,0 +1,15 @@
+<div class="col-lg-3">
+	<%= @user.email %>
+	<%= link_to "current_user_show", current_user %>
+</div>
+<div class="col-lg-9">
+	<div class="row">
+		<%= @user.course.mods.all %>
+		<p>This will contain modules from a course you have enrolled for</p>
+	</div>
+	<div class="row">
+		<%= @user.course.mod.post %>
+		<p> This is the view for the course content </p>
+	</div>
+</div>
+

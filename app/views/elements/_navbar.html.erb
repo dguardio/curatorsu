@@ -9,6 +9,7 @@
     </button>
     <%= link_to "My Application", defined?(root_path) ? root_path : "#", class: "navbar-brand" %>
   </div>
+  <% url = "http://#{request.host+request.fullpath}" %>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -25,9 +26,33 @@
               <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
-        <% else %>
+        <% elsif curatorx_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Edit Account", edit_curatorx_registration_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Sign Out", destroy_curatorx_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% elsif curator_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Edit Account", edit_curator_registration_path %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Sign Out", destroy_curator_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% elsif url.include? "user" or "landing"%>
           <li><%= link_to "Login", new_user_session_path %></li>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>          
+        <% elsif url.include? "curatorx" %>
+          <li><%= link_to "Login", new_curatorx_session_path %></li>
+          <li><%= link_to "Sign Up", new_curatorx_registration_path %></li>          
+        <% else %>
+          <li><%= link_to "Login", new_curator_session_path %></li>
+          <li><%= link_to "Sign Up", new_curator_registration_path %></li>         
         <% end %>
       <% end %>
     </ul>
