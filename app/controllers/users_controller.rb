@@ -4,6 +4,5 @@ class UsersController < ApplicationController
   end
 
   def studyzone
-  	@user = User.course.mods
   end
 end
