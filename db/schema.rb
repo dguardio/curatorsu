@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401210954) do
+ActiveRecord::Schema.define(version: 20160402015403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,16 @@ ActiveRecord::Schema.define(version: 20160401210954) do
     t.text     "description"
     t.string   "timeline"
     t.text     "instructors"
+    t.integer  "curators_id"
+    t.integer  "curatorxes_id"
   end
+
+  create_table "courses_users", id: false, force: true do |t|
+    t.integer "course_id"
+    t.integer "user_id"
+  end
+
+  add_index "courses_users", ["course_id", "user_id"], name: "index_courses_users_on_course_id_and_user_id", using: :btree
 
   create_table "curators", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -116,6 +125,7 @@ ActiveRecord::Schema.define(version: 20160401210954) do
     t.string   "name"
     t.text     "description"
     t.text     "post"
+    t.integer  "courses_id"
   end
 
   create_table "users", force: true do |t|

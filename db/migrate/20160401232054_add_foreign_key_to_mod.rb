@@ -1,5 +1,5 @@
 class AddForeignKeyToMod < ActiveRecord::Migration
   def change
-  	add_foreign_key :mods, :courses
+  	add_reference :mods, :courses
   end
 end

@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get 'curators/:id', to: "curators#show", as: 'curator'
   get 'curatorxes/:id', to: "curatorxes#show", as: 'curatorx'
   get 'users/:id', to: "users#show", as: 'user'
+  resources :courses do
+    resources :mods
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
