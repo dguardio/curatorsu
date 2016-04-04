@@ -11,12 +11,17 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   
   get 'curators/:id', to: "curators#show", as: 'curator'
-  get 'curatorxes/:id', to: "curatorxes#show", as: 'curatorx'
   get 'users/:id', to: "users#show", as: 'user'
-  resources :courses do
-    resources :mods
+  resources :curators do
+    resources :courses do
+      resources :mods
+    end
   end
-
+  resources :users do
+    resources :courses do
+      resources :mods
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -1,5 +1,7 @@
 <h1>New course</h1>
+<%= simple_form_for(@course, url: curator_courses_path, html: {method: :post}) do |f| %>
+  <%= f.error_notification %>
+  <%= render 'form', f: f %>
+<% end %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', courses_path %>
+<%= link_to 'Back', :back %>

@@ -28,7 +28,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { render :show, notice: 'Course was successfully created.' }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CoursesController < ApplicationController
   def update
     respond_to do |format|
       if @course.update(course_params)
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
+        format.html { render :show, flash: 'Course was successfully updated.' }
         format.json { render :show, status: :ok, location: @course }
       else
         format.html { render :edit }
@@ -60,6 +60,16 @@ class CoursesController < ApplicationController
       format.json { head :no_content }
     end
   end
+=begin
+  def reg_course
+    redirect_to :action => 'set_course'
+    current_user.courses << @course
+    respond_to do
+      redirect_to :action => 'show'
+    end
+  end
+=end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +79,11 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.fetch(:course, {})
+=begin
+params.fetch(:course, {})
+=end
+      params.require(:course).permit(:name, :description, :timeline, :instructors, :curator_id)
     end
+
+
 end

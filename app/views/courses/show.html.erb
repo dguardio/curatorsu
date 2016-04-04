@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<%= @course.name %>
+<%= @course.description %>
+<%= @course.timeline %>
+<%= @course.instructors %>
+<%= link_to 'Edit', edit_curator_course_path(id: @course.id) %>
+<%= link_to 'Back', :back %>
