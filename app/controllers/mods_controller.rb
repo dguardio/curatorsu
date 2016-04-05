@@ -28,7 +28,7 @@ class ModsController < ApplicationController
 
     respond_to do |format|
       if @mod.save
-        format.html { redirect_to @mod, notice: 'Mod was successfully created.' }
+        format.html { render :show, notice: 'Module was successfully created.' }
         format.json { render :show, status: :created, location: @mod }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ModsController < ApplicationController
   def update
     respond_to do |format|
       if @mod.update(mod_params)
-        format.html { redirect_to @mod, notice: 'Mod was successfully updated.' }
+        format.html { render :show, notice: 'Module was successfully updated.' }
         format.json { render :show, status: :ok, location: @mod }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ModsController < ApplicationController
   def destroy
     @mod.destroy
     respond_to do |format|
-      format.html { redirect_to mods_url, notice: 'Mod was successfully destroyed.' }
+      format.html { redirect_to mods_url, notice: 'Module was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class ModsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mod_params
-      params.fetch(:mod, {})
+      params.require(:mod).permit(:name, :description, :post, :course_id)
     end
 end

@@ -4,4 +4,5 @@
 <%= @course.timeline %>
 <%= @course.instructors %>
 <%= link_to 'Edit', edit_curator_course_path(id: @course.id) %>
+<%= link_to 'Manage Modules', curator_course_mods_path(course_id: @course.id) %>
 <%= link_to 'Back', :back %>

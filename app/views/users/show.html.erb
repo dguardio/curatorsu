@@ -3,7 +3,16 @@
 	<%= link_to "current_user_show", current_user %>
 </div>
 <div class="col-lg-9">
-	<div class="row"><%= @user.courses.all %></div>
-	<div class="row">This will contain courses similar to courses you are enrolled for</div>
+	<div class="row">
+	<% @user_courses.each do |a| %>
+	<%= a.name %>
+	<% end %>
+	</div>
+	<div class="row">
+	This will contain courses similar to courses you are enrolled for
+	<% @all.each do |b| %>
+	<%= b.name %>
+	<% end %>
+	</div>
 </div>
 

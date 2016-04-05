@@ -1,10 +1,21 @@
-<%= simple_form_for(@mod) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
+  <div class="form-group">
+    <%= f.label :name, class: "control-label col-md-4" %>
+    <div class="col-md-8">
+      <%= f.input_field :name, class: "text-field form-control", html: {spellcheck: "false"} %>
+    </div>
   </div>
-
+  <div>
+  	<%= f.label :description, class: "control-label col-md-4" %>
+    <div class="col-md-8">
+      <%= f.input_field :description, class: "text-area form-control", html: {spellcheck: "true"} %>
+    </div>
+  </div>
+  <div>
+  	<%= f.label :post, class: "control-label col-md-4" %>
+    <div class="col-md-8">
+      <%= f.input_field :post, class: "text-area form-control", html: {spellcheck: "true"} %>
+    </div>
+  </div>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
-<% end %>
