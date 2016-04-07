@@ -4,14 +4,16 @@
 </div>
 <div class="col-lg-9">
 	<div class="row">
-	<% @user_courses.each do |a| %>
-	<%= a.name %>
+	<% @user.courses.each do |a| %>
+	<%= a.name %><br>
 	<% end %>
 	</div>
+
 	<div class="row">
-	This will contain courses similar to courses you are enrolled for
-	<% @all.each do |b| %>
-	<%= b.name %>
+	This will contain courses similar to courses you are enrolled for<br>
+	<% @all.each do |b| %>	
+	<%= b.name %><br>
+	<%= link_to 'Enroll', user_course_path(user_id: @user.id, id: b.id) %>
 	<% end %>
 	</div>
 </div>

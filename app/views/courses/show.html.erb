@@ -3,6 +3,11 @@
 <%= @course.description %>
 <%= @course.timeline %>
 <%= @course.instructors %>
-<%= link_to 'Edit', edit_curator_course_path(id: @course.id) %>
-<%= link_to 'Manage Modules', curator_course_mods_path(course_id: @course.id) %>
+
+<% if curator_signed_in? %>
+	<%= render 'show_curator_links' %>
+<% else %>
+	<%= render 'show_user_links' %>
+<% end %>	
+
 <%= link_to 'Back', :back %>

@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   end
   resources :users do
     resources :courses do
+      member do
+        post 'add'
+      end
       resources :mods
     end
   end

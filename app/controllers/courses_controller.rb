@@ -10,6 +10,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @curator = Curator.find(params[:id]) && @user = User.find(params[:id])
   end
 
   # GET /courses/new
@@ -23,6 +24,8 @@ class CoursesController < ApplicationController
 
   # POST /courses
   # POST /courses.json
+
+
   def create
     @course = Course.new(course_params)
 

@@ -10,14 +10,21 @@
   <tbody>
     <% @mods.each do |mod| %>
       <tr>
+        <td><% mod.name %></td>
+        <td><% mod.description %></td>
+
+      <% if curator_signed_in? %>
         <td><%= link_to 'Show', mod %></td>
         <td><%= link_to 'Edit', edit_mod_path(mod) %></td>
         <td><%= link_to 'Destroy', mod, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <br>
+        <%= link_to 'New Mod', new_curator_course_mod_path %>
+      <% else %>
+        <td><%= link_to('Enter Module', user_course_mod_path(id: mod.id)) %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Mod', new_curator_course_mod_path %>
