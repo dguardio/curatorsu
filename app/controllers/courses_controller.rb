@@ -10,7 +10,6 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @curator = Curator.find(params[:id]) && @user = User.find(params[:id])
   end
 
   # GET /courses/new
@@ -82,9 +81,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-=begin
-params.fetch(:course, {})
-=end
       params.require(:course).permit(:name, :description, :timeline, :instructors, :curator_id)
     end
 
