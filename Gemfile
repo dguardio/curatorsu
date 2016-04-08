@@ -52,6 +52,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
+gem 'access-granted', '~> 1.0.0'
 
 group :development do
   gem 'better_errors'

@@ -4,10 +4,4 @@
 <%= @course.timeline %>
 <%= @course.instructors %>
 
-<% if curator_signed_in? %>
-	<%= render 'show_curator_links' %>
-<% else %>
-	<%= render 'show_user_links' %>
-<% end %>	
-
 <%= link_to 'Back', :back %>
