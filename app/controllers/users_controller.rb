@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
 
   def show
+    authorize! :read, current_user
   	@user = User.find(params[:id])
-  	authorize! :read, @user
     @user_courses = @user.courses ||= []
-  	@all = Course.all
+    @all = Course.all    
+  	authorize! :read, @user
+
   end
 
   def add

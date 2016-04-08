@@ -43,6 +43,9 @@ class AccessPolicy
     role :user do
       can :read, Course
       can :read, Mod
+      can :read, User do |user|
+        user == User.find(@user)
+        end
     end
   end
 end
