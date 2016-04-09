@@ -10,7 +10,6 @@ class ModsController < ApplicationController
   # GET /mods/1
   # GET /mods/1.json
   def show
-    @video = VideoInfo.new(@mod.video_url)
   end
 
   # GET /mods/new
@@ -71,8 +70,5 @@ class ModsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def mod_params
       params.require(:mod).permit(:name, :description, :post, :course_id)
-    end
-    def vid
-      VideoInfo.provider_api_keys = { youtube: 'AIzaSyBTgepiItF6LUbGxYBgyVVMWSmlsHO8QOA' }
     end
 end
