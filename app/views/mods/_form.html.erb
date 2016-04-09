@@ -16,6 +16,12 @@
       <%= f.input_field :post, class: "text-area form-control", html: {spellcheck: "true"} %>
     </div>
   </div>
+  <div>
+    <%= f.label :video_url, class: "control-label col-md-4" %>
+    <div class="col-md-8">
+      <%= f.input_field :video_url, class: "text-field form-control", html: {spellcheck: "false"} %>
+    </div>
+  </div>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
