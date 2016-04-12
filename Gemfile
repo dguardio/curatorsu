@@ -29,10 +29,10 @@ gem 'spring',        group: :development
 gem 'youtube_id'
 # Use unicorn as the app server
 # gem 'unicorn'
-
+gem 'video_info'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'hirb'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
