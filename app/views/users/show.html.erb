@@ -1,6 +1,7 @@
 <div class="col-lg-3">
 	<%= @user.email %>
 	<%= link_to "current_user_show", current_user %>
+	<%= link_to 'Create New Course', new_user_course_path(user_id: @user.id) %>
 </div>
 <div class="col-lg-9">
 	<div class="row">
