@@ -28,7 +28,7 @@ class CoursesController < ApplicationController
   def create
     authorize! :create, @course
     @course = Course.new(course_params)
-
+    
     respond_to do |format|
       if @course.save
         format.html { render :show, notice: 'Course was successfully created.' }

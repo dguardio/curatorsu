@@ -24,16 +24,16 @@ class AccessPolicy
     role :curator, proc { |user| user.curator? } do
       can :create, Course
       can :create, Mod
-      can [:update, :destroy], Course do |course, user|
-        course.curator == user
+      can [:read, :update, :destroy], Course do |course, user|
+        course.user.roles == curator
       end
     end
 
     role :curatorx, proc { |user| user.curatorx? } do
       can :create, Course
       can :create, Mod
-      can [:update, :destroy], Course do |course, user|
-        course.curatorx == user
+      can [:read, :update, :destroy], Course do |course, user|
+        course.user.roles == curatorx
       end
     end
 

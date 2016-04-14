@@ -10,7 +10,6 @@ class ModsController < ApplicationController
   # GET /mods/1
   # GET /mods/1.json
   def show
-    @embed_video = %Q{<iframe width="854" height="480" src="https://www.youtube.com/embed/#{@video}" frameborder="0" allowfullscreen></iframe>}
   end
 
   # GET /mods/new
@@ -25,7 +24,10 @@ class ModsController < ApplicationController
   # POST /mods
   # POST /mods.json
   def create
+    authorize! :create, @mod
     @mod = Mod.new(mod_params)
+    @course = Course.find(params[:course_id])
+    @course.mods.build(params[:course][:mod])
 
     respond_to do |format|
       if @mod.save
