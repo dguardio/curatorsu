@@ -24,6 +24,7 @@
 //->Prelang (ui_framework:twitter_bootstrap)
 
 // Give everything in 'yield' margin to separate it.
+
 .yield {
   margin: 30px;
 }
@@ -39,8 +40,25 @@
 }
 .navbar-default {
 	height: 80px;
+	background-color: white;
 }
-.navbar-brand {
-	max-height: 60px;
+
+.navbar-header {
 	vertical-align: middle;
+	padding-left: 20px;	
+	margin-bottom: 5px;
+	margin-top: 0px;
+}
+.navbar-brand img {
+	width: 150px;
+	max-height: 70px;
+	margin-left: 43px;
+	padding-right: 10px;
+	margin-right: 10px;
+}
+.navbar-right {
+	vertical-align: middle;
+	align-content: middle;
+	margin-top: 12px;
+
 }
