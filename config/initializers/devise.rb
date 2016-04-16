@@ -261,7 +261,7 @@ Devise.setup do |config|
   #
   # The router that invoked `devise_for`, in the example above, would be:
   # config.router_name = :my_engine
-  #
+  config.secret_key = 'd424613e4aacdf00738d5f05a4b223b828c379990d06a9711fefd614877f3e47ab2a5345dca5659108abd7398283a5cce909ec4a256b4dc667521bd96b961df0'
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
