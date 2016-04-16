@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: "You don't have permission to do that!"
   end
 
+
   private
   
   #-> Prelang (user_login:devise)
@@ -26,5 +27,7 @@ class ApplicationController < ActionController::Base
       redirect_to fallback_redirect, flash: {error: "You must be signed in to view this page."}
     end
   end
+
+  
 
 end
