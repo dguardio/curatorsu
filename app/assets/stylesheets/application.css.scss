@@ -38,6 +38,10 @@
 .form-user {
   max-width: 450px;
 }
+
+.navbar {
+	margin-bottom: 0;
+}
 .navbar-default {
 	height: 80px;
 	background-color: white;
@@ -46,7 +50,6 @@
 .navbar-header {
 	vertical-align: middle;
 	padding-left: 20px;	
-	margin-bottom: 5px;
 	margin-top: 0px;
 }
 .navbar-brand img {
@@ -60,5 +63,4 @@
 	vertical-align: middle;
 	align-content: middle;
 	margin-top: 12px;
-
 }

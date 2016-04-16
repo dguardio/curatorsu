@@ -1,3 +1,12 @@
 // Place all the styles related to the Landings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content {
+	background: image_url('guy.jpeg') no-repeat;
+	max-height: 860px;
+	min-height: 500px;
+	padding-top: 80px;
+	padding-bottom: 50px;
+	overflow: hidden;
+}
