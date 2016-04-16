@@ -1,9 +1,14 @@
-<div class="content">
+<div class="landing-content">
+	<div class="landing-overlay"></div>
 	<div>
 		<h1>Landings#index</h1>
 		<p>Find me in app/views/landings/index.html.erb</p>
 		<% if user_signed_in? %>
 			<%= link_to 'My Profile', user_path(current_user.id) %>
+		<% else %>
+			<div class="landing-form">
+				
+			</div>
 		<% end %>
 	</div>
 </div>

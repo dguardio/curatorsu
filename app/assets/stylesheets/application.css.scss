@@ -24,6 +24,11 @@
 //->Prelang (ui_framework:twitter_bootstrap)
 
 // Give everything in 'yield' margin to separate it.
+body {
+	font: 14px/22px "ralewayregular", Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #888888;
+    -webkit-font-smoothing: antialiased;
+}
 
 .yield {
   margin: 30px;
@@ -41,6 +46,7 @@
 
 .navbar {
 	margin-bottom: 0;
+	font-family: 'ralewaymedium', Helvetica, Arial, sans-serif;
 }
 .navbar-default {
 	height: 80px;

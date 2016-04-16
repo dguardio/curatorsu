@@ -6,13 +6,12 @@
 </div>
 <div class="col-lg-9">
 	<div class="row">
-	<% @user.courses.each do |a| %>
-	<%= a.name %><br>
-	<% end %>
+		<% @user.courses.each do |a| %>
+		<%= a.name %><br>
+		<% end %>
 	</div>
 
 	<div class="row">
-	This will contain courses similar to courses you are enrolled for<br>
 	<% @all.each do |b| %>	
 	<%= b.name %>
 		<% if can? :create, Course %>
