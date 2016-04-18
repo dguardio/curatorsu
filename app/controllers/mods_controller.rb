@@ -24,10 +24,8 @@ class ModsController < ApplicationController
   # POST /mods
   # POST /mods.json
   def create
-    authorize! :create, @mod
     @mod = Mod.new(mod_params)
-    @course = Course.find(params[:course_id])
-    @course.mods.build(params[:course][:mod])
+    @mod.build(:courses_id)
 
     respond_to do |format|
       if @mod.save
@@ -74,13 +72,4 @@ class ModsController < ApplicationController
     def mod_params
       params.require(:mod).permit(:name, :description, :post, :course_id, :video, :soundcloud_track)
     end
-
-    #def vid
-    #  @video = @mod.video
-     # if @video.nil?
-      #  @video = ""
-      #else
-       # @video = YoutubeID.from(@mod.video)
-      #end
-    #end
 end

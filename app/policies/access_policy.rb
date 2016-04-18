@@ -22,19 +22,13 @@ class AccessPolicy
     # More privileged role, applies to registered users.
     #
     role :curator, proc { |user| user.curator? } do
-      can :create, Course
-      can :create, Mod
-      can [:read, :update, :destroy], Course do |course, user|
-        course.user.roles == curator
-      end
+      can :manage, Course
+      can :manage, Mod
     end
 
     role :curatorx, proc { |user| user.curatorx? } do
-      can :create, Course
-      can :create, Mod
-      can [:read, :update, :destroy], Course do |course, user|
-        course.user.roles == curatorx
-      end
+      can :manage, Course
+      can :manage, Mod
     end
 
     # The base role with no additional conditions.
