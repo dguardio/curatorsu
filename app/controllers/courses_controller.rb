@@ -27,7 +27,7 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    
+    @course.users << User.find(params[:user_id])
     respond_to do |format|
       if @course.save
         format.html { render :show, notice: 'Course was successfully created.' }
@@ -81,7 +81,7 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, :description, :timeline, :instructors, :curator_id)
+      params.require(:course).permit(:name, :description, :timeline, :instructors)
     end
 
 
