@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p><br>
-<% @mod.name %><br>
-<%= @mod.description %><hr>
-<%= @mod.post %>
+<div>
+	<p id="notice"><%= notice %></p><br>
+	<% @mod.name %><br>	
+</div>
 
+<div>
+	<%= @mod.post %>
+</div>
 
 <div>
 	<%= embed_video(@mod.video) %>

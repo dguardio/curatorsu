@@ -1,8 +1,8 @@
 <h1>Editing course</h1>
-<%= simple_form_for @course, url: {action: 'update'} do |f| %>
+<%= simple_form_for @course, url: {action: 'update', multipart: true} do |f| %>
   <%= f.error_notification %>
   <%= render 'form', f: f %>
 <% end %>
 
-<%= link_to 'Show Course', curator_course_path(id: @course.id) %>
+<%= link_to 'Show Course', user_course_path(id: @course.id) %>
 <%= link_to 'Back', :back %>

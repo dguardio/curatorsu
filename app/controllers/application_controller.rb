@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     # Add my attributes added to the devise User class
     devise_parameter_sanitizer.for(:sign_up) << :first_name << :last_name << :role
-    devise_parameter_sanitizer.for(:account_update) << :first_name << :last_name << :role
+    devise_parameter_sanitizer.for(:account_update) << :first_name << :last_name << :role << :image
   end
   
   rescue_from AccessGranted::AccessDenied do |exception|

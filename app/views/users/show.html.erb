@@ -1,17 +1,24 @@
 <div class="col-lg-3">
-	<%= @user.email %>
+  	<%= image_tag @user.image.thumb.url %><br>
+	<p> Hi <%= @user.first_name %>, </p>
+
 	<% if can? :create, Course %>
-	<%= link_to 'Create New Course', new_user_course_path(user_id: @user.id) %>
+		<%= link_to 'Create New Course', new_user_course_path(user_id: @user.id) %>
 	<% end %>
 </div>
+
 <div class="col-lg-9">
 	<div class="row">
 		<% @user.courses.each do |a| %>
 		<%= a.name %><br>
 		<% end %>
 	</div>
-
+	<hr>
 	<div class="row">
+	<% if @user.courses.empty? %>
+		<p> We see you haven't taken any courses yet </p>
+		<p> Choose One here</p>
+	<% end %>
 	<% @all.each do |b| %>	
 	<%= b.name %>
 		<% if can? :create, Course %>
