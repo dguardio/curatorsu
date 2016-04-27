@@ -25,14 +25,17 @@
 
 // Give everything in 'yield' margin to separate it.
 body {
-	font: 14px/22px "ralewayregular", Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: #888888;
-    -webkit-font-smoothing: antialiased;
+
+}
+
+a {
+  color: #00C3FF;	
 }
 
 .yield {
   margin: 30px;
-  text-decoration-color: blue;
+  font: 14px/22px "ralewayregular", Helvetica Neue, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 // Constrain forms for models (scaffolded models) so they aren't full page width.
