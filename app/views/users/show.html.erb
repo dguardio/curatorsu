@@ -1,3 +1,4 @@
+
 <div class="col-lg-3">
   	<%= image_tag @user.image.thumb.url %><br>
 	<p> Hi <%= @user.first_name %>, </p>
@@ -8,10 +9,10 @@
 </div>
 
 <div class="col-lg-9 ">
-	<div class="card-group row">
+	<div class="card-group row text-xs-center">
 	  <% @user.courses.each do |a| %>
 	    <div class="card col-lg-3">
-	        <%= image_tag a.image.thumb.url :class => 'card-img-top' %>
+	        <%= image_tag a.image.thumb.url :class => 'card-img-top', :alt => 'Card Image' %>
 	        <div class="card-block">
 	          <h4 class="card-title"><%= a.name %></h4>
 	          <p class="card-text"> <%= a.description %> </p>
@@ -37,8 +38,4 @@
 			<% end %>
 		<% end %>
 	</div>
-
-
 </div>
-
-
