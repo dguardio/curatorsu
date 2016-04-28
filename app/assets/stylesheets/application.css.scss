@@ -25,7 +25,6 @@
 
 // Give everything in 'yield' margin to separate it.
 body {
-  margin: 40px;
 }
 
 a {
@@ -33,9 +32,10 @@ a {
 }
 
 .yield {
-  margin: 30px;
-  font: 14px/22px "ralewayregular", Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin: 70px;
+  font: 18px/26px "ralewayregular", Helvetica Neue, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
 }
 
 .yielder{

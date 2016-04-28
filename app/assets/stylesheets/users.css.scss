@@ -6,21 +6,25 @@ div {
 	display: block;
 }
 
+.card-group {
+	border-left: 1px solid #e5e5e5;
+}
 .card {
 	width: 100%;
 	max-width: 100%;
 	margin-left: 0px;
 	margin-right: 0px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	padding: 1.5rem;
 	border-width: 0.2rem;
 	position: relative;
 	border-color: blue;
-	border: 1px solid #e5e5e5;
-	border-radius: 10px;
-
 }
 
 .card img {
-	border-radius: 100px;
+
+}
+
+.user-bar {
+	position: fixed;
 }
