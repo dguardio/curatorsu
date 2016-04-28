@@ -1,41 +1,48 @@
+<div class="yielder">
+	<div class="col-lg-3">
+	  	<%= image_tag @user.image.thumb.url %><br>
+		<p> Hi <%= @user.first_name %>, </p>
 
-<div class="col-lg-3">
-  	<%= image_tag @user.image.thumb.url %><br>
-	<p> Hi <%= @user.first_name %>, </p>
-
-	<% if can? :create, Course %>
-		<%= link_to 'Create New Course', new_user_course_path(user_id: @user.id) %>
-	<% end %>
-</div>
-
-<div class="col-lg-9 ">
-	<div class="card-group row text-xs-center">
-	  <% @user.courses.each do |a| %>
-	    <div class="card col-lg-3">
-	        <%= image_tag a.image.thumb.url :class => 'card-img-top', :alt => 'Card Image' %>
-	        <div class="card-block">
-	          <h4 class="card-title"><%= a.name %></h4>
-	          <p class="card-text"> <%= a.description %> </p>
-	          <p class="card-text"><small class="text-muted"> <%= a.timeline %></small></p>
-	        </div>
-	    </div>
-	  <% end %>  
+		<% if can? :create, Course %>
+			<%= link_to 'Create New Course', new_user_course_path(user_id: @user.id) %>
+		<% end %>
 	</div>
 
-	<hr>
+	<div class="col-lg-9 ">
+		<div class="card-group row">
+		  <% @user.courses.each do |a| %>
+			<div class="card row">
+			    <center>
+			    <%= link_to user_course_path(user_id: @user.id, id: a.id) do %>
+			    	<%= image_tag a.image.thumb.url :class => "card-img-top col-lg-4", :alt => 'Card Image' %>
+				<% end %>
+			        <div class="card-block col-lg-8">
+			        <%= link_to user_course_path(user_id: @user.id, id: a.id) do %>
+			        	<h4 class="card-title"><%= a.name %></h4>
+					<% end %>
+			          <p class="card-text"> <%= a.description %> </p>
+			          <p class="card-text"><small class="text-muted"> <%= a.timeline %></small></p>
+			        </div>
+			    </center>
+			</div>
+		  <% end %>  
+		</div>
 
-	<div class="row">
-		<% if @user.courses.empty? %>
-			<p> We see you haven't taken any courses yet </p>
-			<p> Choose One here</p>
-		<% end %>
-		<% @all.each do |b| %>	
-		<%= b.name %>
-			<% if can? :create, Course %>
-				<%= link_to 'Manage Course', user_course_path(user_id: @user.id, id: b.id) %><br>
-			<% else %>
-				<%= link_to 'Enroll', user_course_path(user_id: @user.id, id: b.id) %><br>			
+		<hr>
+
+		<div class="row">
+			<% if @user.courses.empty? %>
+				<p> We see you haven't taken any courses yet </p>
+				<p> Choose One here</p>
 			<% end %>
-		<% end %>
+			<% @all.each do |b| %>	
+			<%= b.name %>
+				<% if can? :create, Course %>
+					<%= link_to 'Manage Course', user_course_path(user_id: @user.id, id: b.id) %><br>
+				<% else %>
+					<%= link_to 'Enroll', user_course_path(user_id: @user.id, id: b.id) %><br>			
+				<% end %>
+			<% end %>
+		</div>
 	</div>
 </div>

@@ -1,19 +1,21 @@
-<div>
-	<p id="notice"><%= notice %></p><br>
-	<% @mod.name %><br>	
-</div>
+<div class="yielder">	
+	<div>
+		<p id="notice"><%= notice %></p><br>
+		<% @mod.name %><br>	
+	</div>
 
-<div>
-	<%= @mod.post %>
-</div>
+	<div>
+		<%= @mod.post %>
+	</div>
 
-<div>
-	<%= embed_video(@mod.video) %>
+	<div>
+		<%= embed_video(@mod.video) %>
+	</div>
+	<div>
+		<%= @mod.soundcloud_track.to_s.html_safe %>
+	</div>
+	<% if can? :create && :update, Mod %>
+	<%= link_to 'Edit', edit_user_course_mod_path(id: @mod.id) %> |
+	<% end %>
+	<%= link_to 'Back', :back %>
 </div>
-<div>
-	<%= @mod.soundcloud_track.to_s.html_safe %>
-</div>
-<% if can? :create && :update, Mod %>
-<%= link_to 'Edit', edit_user_course_mod_path(id: @mod.id) %> |
-<% end %>
-<%= link_to 'Back', :back %>

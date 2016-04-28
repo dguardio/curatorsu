@@ -25,7 +25,7 @@
 
 // Give everything in 'yield' margin to separate it.
 body {
-
+  margin: 40px;
 }
 
 a {
@@ -39,7 +39,7 @@ a {
 }
 
 .yielder{
-	margin-top: 82px;
+	margin-top: 90px;
 }
 
 // Constrain forms for models (scaffolded models) so they aren't full page width.
