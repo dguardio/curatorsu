@@ -16,11 +16,11 @@
 		<% if @user.role == 'user' %>
 		<div class="card-group row">
 		  <% @user.courses.each do |a| %>
-			<div class="card row">
+			<div class="card col-lg-4">
 			    <%= link_to user_course_path(user_id: @user.id, id: a.id) do %>
 			    	<%= image_tag a.image.thumb.url :class => "card-img-top col-lg-4", :alt => 'Card Image' %>
 				<% end %>
-		        <div class="card-block col-lg-8">
+		        <div class="card-block">
 		        <%= link_to user_course_path(user_id: @user.id, id: a.id) do %>
 		        	<h4 class="card-title"><strong><%= a.name %></strong></h4>
 				<% end %>
@@ -39,7 +39,7 @@
 				<p> <%= link_to 'Create a New Course', new_user_course_path %> </p>
 			<% end %>
 		  <% @user.courses.each do |b| %>
-			<div class="card row">
+			<div class="card col-lg-4">
 			    <%= link_to user_course_path(user_id: @user.id, id: b.id) do %>
 			    	<%= image_tag b.image.thumb.url :class => "card-img-top col-lg-4", :alt => 'Card Image' %>
 				<% end %>
