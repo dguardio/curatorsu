@@ -48,7 +48,12 @@
 	font-size: 20px;
 	font-weight: bold;
 }
+
+.landing-form .control-label {
+	display: none;
+}
 .btn-dir {
+	margin-top: 100px;
 	width: 200px;
 	height: 50px;
 	vertical-align: middle;
