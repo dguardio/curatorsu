@@ -19,7 +19,22 @@
 	z-index: -1;
 }
 .landing-info {
-	max-width: 800px;
+	max-width: 750px;
+	margin-left: 60px;
+	margin-top: 100px;
+	color: white;
+}
+
+.landing-info h1 {
+	font-family: "Open Sans", sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+	color: #00C3FF;
+}
+
+.landing-info p {
+	font-size: 20px;
+	padding-top: 10px;
 }
 
 .landing-form {
@@ -27,6 +42,11 @@
 	margin-right: 20px;
 	color: white;
 
+}
+.landing-form .btn-primary {
+	width: 262px;
+	font-size: 20px;
+	font-weight: bold;
 }
 .btn-dir {
 	width: 200px;

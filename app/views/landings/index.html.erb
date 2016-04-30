@@ -2,61 +2,63 @@
 	<div class="landing-overlay"></div>
 	<div class="row">
 		<div class="landing-info col-lg-8">
-			<h1>Impact Society better</h1>
-			<p>lighting the Social Entrepreneurship Path</p>
+			<center>
+				<h1>Impact Society Better</h1>
+				<p>Sign Up to learn the Social Entrepreneurship Path <br>from Industry leaders, Social Veterans, Academicians <br>and Entrepreneurs who have been there and done it.</p>
+			</center>
 		</div>
 		<div class="landing-form col-lg-4">
-		<% if current_user.present? %>
-			<center><%= link_to 'Your Classroom', user_path(current_user.id), class: "btn btn-primary btn-dir" %></center>
-		<% else %>
-			<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal form-user"}) do |f| %>
-			  <%= devise_error_messages! %>
+			<% if current_user.present? %>
+				<center><%= link_to 'Your Classroom', user_path(current_user.id), class: "btn btn-primary btn-dir" %></center>
+			<% else %>
+				<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-horizontal form-user"}) do |f| %>
+				  <%= devise_error_messages! %>
 
-			  <div class="form-group">
-			    <div class="col-md-8">
-			      <%= f.input_field :first_name, :placeholder => 'First Name', class: "text-field form-control", html: {spellcheck: "false"} %>
-			    </div>
-			  </div>
+				  <div class="form-group">
+				    <div class="col-md-8">
+				      <%= f.input_field :first_name, :placeholder => 'First Name', class: "text-field form-control", html: {spellcheck: "false"} %>
+				    </div>
+				  </div>
 
 
-			  <div class="form-group">
-			    <div class="col-md-8">
-			      <%= f.input_field :last_name, :placeholder => 'Last Name', class: "text-field form-control", html: {spellcheck: "false"} %>
-			    </div>
-			  </div>
-			  
-			  <div class="form-group">
-			    <div class="col-md-8">
-			      <%= f.email_field :email, :placeholder => 'E-mail', class: "text-field form-control", html: {spellcheck: "false"} %>
-			    </div>
-			  </div>
-			    
-			  <div class="form-group">
-			    <div class="col-md-8">
-			      <%= f.password_field :password, :placeholder => 'Enter Password',class: "text-field form-control", html: {autocomplete: "off"} %>
-			    </div>
-			  </div>
-			     
-			  <div class="form-group">
-			    <div class="col-md-8">
-			      <%= f.password_field :password_confirmation, :placeholder => 'Password Again', class: "text-field form-control", html: {autocomplete: "off"} %>
-			    </div>
-			  </div>
-			     
-			  <div class="form-group">
-			    <div class="col-md-8">
-			      <%= f.submit "Sign Up", class: "btn btn-primary" %>
-			    </div>
-			  </div>
+				  <div class="form-group">
+				    <div class="col-md-8">
+				      <%= f.input_field :last_name, :placeholder => 'Last Name', class: "text-field form-control", html: {spellcheck: "false"} %>
+				    </div>
+				  </div>
+				  
+				  <div class="form-group">
+				    <div class="col-md-8">
+				      <%= f.email_field :email, :placeholder => 'E-mail', class: "text-field form-control", html: {spellcheck: "false"} %>
+				    </div>
+				  </div>
+				    
+				  <div class="form-group">
+				    <div class="col-md-8">
+				      <%= f.password_field :password, :placeholder => 'Enter Password',class: "text-field form-control", html: {autocomplete: "off"} %>
+				    </div>
+				  </div>
+				     
+				  <div class="form-group">
+				    <div class="col-md-8">
+				      <%= f.password_field :password_confirmation, :placeholder => 'Password Again', class: "text-field form-control", html: {autocomplete: "off"} %>
+				    </div>
+				  </div>
+				     
+				  <div class="form-group">
+				    <div class="col-md-8">
+				      <%= f.submit "Sign Up", class: "btn btn-primary" %>
+				    </div>
+				  </div>
 
-			  <div class="form-group">
-			    <div class="col-md-8">
-			      <%= render "devise/shared/links" %>
-			    </div>
-			  </div>
+				  <div class="form-group">
+				    <div class="col-md-8">
+				      <%= render "devise/shared/links" %>
+				    </div>
+				  </div>
 
-			<% end %>	
-		<% end %>
+				<% end %>	
+			<% end %>
 		</div>
 	</div>
 </div>
