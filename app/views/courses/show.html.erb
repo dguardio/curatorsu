@@ -1,7 +1,7 @@
 <div class="yielder">
-	<div>
-		<p id="notice"><%= notice %></p>
-	  	<%= image_tag @course.image.thumb.url %><br>
+<p id="notice"><%= notice %></p>
+	<div class="course-info">
+	  	<%= image_tag @course.image.thumb.url :class => "course-img" %><br>
 		<%= @course.name %><br>
 		<%= @course.description %><br>
 		<%= @course.timeline %><br>
