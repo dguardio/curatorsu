@@ -26,7 +26,7 @@ class ModsController < ApplicationController
   def create
     @mod = Mod.new(mod_params)
     @course = Course.find(params[:course_id])
-    @mod.course_id = @course
+    @mod.course = @course
     respond_to do |format|
       if @mod.save
         format.html { render :show, notice: 'Module was successfully created.' }

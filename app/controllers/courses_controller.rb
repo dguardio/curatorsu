@@ -11,8 +11,7 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @course = Course.find(params[:id])
-    @course_mods = @course.mods ||= []
-    @all = Course.all   
+    @course_mods = @course.mods ||= []  
   end
 
   # GET /courses/new
