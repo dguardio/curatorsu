@@ -3,24 +3,24 @@
 <!-- Here is the User bar to show various options and useful links -->
 	<div class="col-lg-4">
 		<div class="user-bar">
-	  	<%= image_tag @user.image.thumb.url %><br>
-		<p> Hi <%= @user.first_name %>, </p>
+		  	<%= image_tag @user.image.thumb.url %><br>
+			<p> Hi <%= @user.first_name %>, </p>
 
-		<% if can? :create, Course %>
-			<%= link_to 'Create New Course', new_user_course_path(user_id: @user.id) %>
-		<% end %>
+			<% if can? :create, Course %>
+				<%= link_to 'Create New Course', new_user_course_path(user_id: @user.id) %>
+			<% end %>
 		</div>
 	</div>
 <!-- This Div contains the various courses that a Curator manages or that a User has enrolled for. -->
 	<div class="col-lg-8">
 		<% if @user.role == 'user' %>
-		<div class="card-group row">
+		<div class="row">
 		  <% @user.courses.each do |a| %>
 			<div class="card col-lg-4">
 			    <%= link_to user_course_path(user_id: @user.id, id: a.id) do %>
-			    	<%= image_tag a.image.thumb.url :class => "card-img-top col-lg-4", :alt => 'Card Image' %>
+			    	<%= image_tag a.image.thumb.url :class => "card-img-top row", :alt => 'Card Image' %>
 				<% end %>
-		        <div class="card-block">
+		        <div class="card-block row">
 		        <%= link_to user_course_path(user_id: @user.id, id: a.id) do %>
 		        	<h4 class="card-title"><strong><%= a.name %></strong></h4>
 				<% end %>
@@ -31,7 +31,7 @@
 		  <% end %>
 		</div>
 		<% end %>
-		<div class="card-group row">
+		<div class="row">
 			<% if @user.courses.empty? and @user.role == 'user' %>
 				<p> We see you haven't taken any courses yet </p>
 				<p> Visit our Catalog <%= link_to 'Here', user_courses_path(user_id: @user.id) %> to choose one.</p>
@@ -41,15 +41,15 @@
 		  <% @user.courses.each do |b| %>
 			<div class="card col-lg-4">
 			    <%= link_to user_course_path(user_id: @user.id, id: b.id) do %>
-			    	<%= image_tag b.image.thumb.url :class => "card-img-top col-lg-4", :alt => 'Card Image' %>
+			      <%= image_tag b.image.thumb.url :class => "card-img-top", :alt => 'Card Image' %>
 				<% end %>
-			        <div class="card-block col-lg-8">
+			    <div class="card-block">
 			        <%= link_to user_course_path(user_id: @user.id, id: b.id) do %>
 			        	<h4 class="card-title"><%= b.name %></h4>
 					<% end %>
 			          <p class="card-text"> <%= b.description %> </p>
 			          <p class="card-text"><small class="text-muted"> <%= b.timeline %></small></p>
-			        </div>
+			    </div>
 			</div>
 		  <% end %>  
 		</div>
