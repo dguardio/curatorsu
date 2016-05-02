@@ -9,14 +9,16 @@
           <%= link_to user_course_path(id: course.id) do %>
             <%= image_tag course.image.thumb.url :class => "card-img-top row", :alt => 'Card Image' %>
           <% end %>
-          <h3 class="card-title"> <%= course.name %> </h3>
-          <p class="card-text"> <%= course.description%> </p>
-          <p class="card-text"> <%= course.timeline %> </p>
-          <p class="card-text"><small class="text-muted"> <%= course.instructors %> </small></p>
+            <div class="card-content">
+              <h3 class="card-title"> <%= course.name %> </h3>
+              <p class="card-text"> <%= course.description%> </p>
+              <p class="card-text"> <%= course.timeline %> </p>
+              <p class="card-text"><small class="text-muted"> <%= course.instructors %> </small></p>
+            </div>
           <% if current_user.role == "curator" %>
-            <%= link_to 'Edit Course Information', edit_user_course_path(id: course.id) %>
+            <%= link_to 'Edit Course Information', edit_user_course_path(id: course.id), class: "btn btn-primary" %>
           <% else %>
-            <%= link_to 'View this Course', user_course_path(id: course.id), class: "btn btn-primary" %>
+            <p> <%= link_to 'View this Course', user_course_path(id: course.id), class: "btn btn-primary" %> </p>
           <% end %>
         </div>
       <% end %>
