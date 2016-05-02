@@ -1,23 +1,26 @@
 <div class="yielder">
-  <h1>Listing courses</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
+  <div class="filter col-lg-3">
+    
+  </div>
+  <div class="all-courses col-lg-9">
+    <div class="row">
       <% @courses.each do |course| %>
-        <tr>
-          <td><%= course.name %></td>
-          <td><%= course.description%></td>
-          <td><%= course.timeline %></td>
-          <td><%= course.instructors %></td>
-          <td> <%= link_to 'Edit Course Information', edit_user_course_path(id: course.id) %> </td> 
-        </tr>
+        <div class="card card-block col-lg-4">
+          <%= link_to user_course_path(id: course.id) do %>
+            <%= image_tag course.image.thumb.url :class => "card-img-top row", :alt => 'Card Image' %>
+          <% end %>
+          <h3 class="card-title"> <%= course.name %> </h3>
+          <p class="card-text"> <%= course.description%> </p>
+          <p class="card-text"> <%= course.timeline %> </p>
+          <p class="card-text"><small class="text-muted"> <%= course.instructors %> </small></p>
+          <% if current_user.role == "curator" %>
+            <%= link_to 'Edit Course Information', edit_user_course_path(id: course.id) %>
+          <% else %>
+            <%= link_to 'View this Course', user_course_path(id: course.id), class: "btn btn-primary" %>
+          <% end %>
+        </div>
       <% end %>
-    </tbody>
-  </table>
+    </div>  
+  </div>
+
 </div>

@@ -10,15 +10,6 @@
       <%= f.input_field :description, class: "text-area form-control", html: {spellcheck: "true"} %>
     </div>
   </div>
-
-  <% if request.original_url.include? "edit" %>
-    <div>
-      <%= f.label :image, class: "control-label col-md-4" %><br>  
-      <div class="field col-md-8">
-        <%= f.file_field :image %>
-      </div>
-    </div>  
-  <% end %>
   
   <div>
   	<%= f.label :timeline, class: "control-label col-md-4" %>
@@ -32,6 +23,14 @@
       <%= f.input_field :instructors, class: "text-field form-control", html: {spellcheck: "false"} %>
     </div>    	
   </div>
+  <% if request.original_url.include? "edit" %>
+    <div>
+      <%= f.label :image, class: "control-label col-md-4" %>
+      <div class="field col-md-8">
+        <%= f.file_field :image %>
+      </div>
+    </div>  
+  <% end %>  
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
