@@ -29,7 +29,7 @@
           </li>
         <% else %>
           <li>
-            <%= form_for(:user, :url => session_path(:user), html: { class: "navbar-form navbar-right form-inline" }) do |f| %>
+            <%= simple_form_for(:user, :url => session_path(:user), html: { class: "navbar-form navbar-right form-inline" }) do |f| %>
                 <div class="form-group">
                   <%= f.text_field :email, :placeholder => "Email", class: "form-control" %> 
                 </div>

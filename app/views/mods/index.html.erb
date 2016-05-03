@@ -1,15 +1,14 @@
 <div class="yielder">
-  <h1>Course Modules</h1>
+  <h1><%= @course.name %></h1>
 
   <% @mods.each do |mod| %>
-     <%= mod.name %>
-     <%= mod.description %>
      <% if can? :create && :update, Mod %>
+      <p> <%= mod.name %> </p>
       <%= link_to 'Edit', edit_user_course_mod_path(id: mod.id) %>
       <%= link_to 'Destroy', user_course_mod_path(id: mod.id), method: :delete, data: { confirm: 'Are you sure?' } %>
       <%= link_to 'New Mod', new_user_course_mod_path %><br>   
      <% else %>
-      <%= link_to('Enter Module', user_course_mod_path(id: mod.id)) %>
+      <%= link_to(mod.name, user_course_mod_path(id: mod.id)) %>
       <br>
      <% end %>    
   <% end %>

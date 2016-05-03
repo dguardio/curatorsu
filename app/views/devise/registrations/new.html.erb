@@ -40,13 +40,6 @@
       <%= f.password_field :password_confirmation, class: "text-field form-control", html: {autocomplete: "off"} %>
     </div>
   </div>
-
-  <div class="form-group">
-    <%= f.label :role, "Which are You?", class: "control-label col-md-4" %>
-    <div class="col-md-8">
-      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
-    </div>
-  </div>
      
   <div class="form-group">
     <div class="col-md-offset-4 col-md-8">
