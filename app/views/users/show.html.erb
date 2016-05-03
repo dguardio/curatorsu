@@ -36,6 +36,8 @@
 				<p> We see you haven't taken any courses yet </p>
 				<p> Visit our Catalog <%= link_to 'Here', user_courses_path(user_id: @user.id) %> to choose one.</p>
 			<% elsif @user.courses.empty? and @user.role == 'curator' || 'curatorx'  %>
+				<p> Once you create a Course, that Course can be easily accessed here if you need to edit it later on.</p>
+				<p> Think of this as a dosser of all the courses you create here.</p>
 				<p> <%= link_to 'Create a New Course', new_user_course_path %> </p>
 			<% end %>
 		  <% @user.courses.each do |b| %>

@@ -28,7 +28,6 @@
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "LOGIN", new_user_session_path %></li>
           <li>
             <%= form_for(:user, :url => session_path(:user), html: { class: "navbar-form navbar-right form-inline" }) do |f| %>
                 <div class="form-group">
