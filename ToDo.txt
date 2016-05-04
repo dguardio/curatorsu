@@ -1,0 +1,7 @@
+1. Fix Incomplete and Error handling messages for Email
+2. Authorizations using access granted
+3. Use Ajax to load all Modules inside Module index as the final content consumption page
+4. Add Video as Landing View background
+5. Add document features and handling.
+6. Use Jquery to handle transitions and element animations.
+7. Add SiteMap at footer section.

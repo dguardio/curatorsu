@@ -39,21 +39,21 @@
 				<p> Once you create a Course, that Course can be easily accessed here if you need to edit it later on.</p>
 				<p> Think of this as a dosser of all the courses you create here.</p>
 				<p> <%= link_to 'Create a New Course', new_user_course_path %> </p>
-			<% end %>
-		  <% @user.courses.each do |b| %>
-			<div class="card col-lg-4">
-			    <%= link_to user_course_path(user_id: @user.id, id: b.id) do %>
-			      <%= image_tag b.image.thumb.url :class => "card-img-top", :alt => 'Card Image' %>
-				<% end %>
-			    <div class="card-block">
-			        <%= link_to user_course_path(user_id: @user.id, id: b.id) do %>
-			        	<h4 class="card-title"><%= b.name %></h4>
-					<% end %>
-			          <p class="card-text"> <%= b.description %> </p>
-			          <p class="card-text"><small class="text-muted"> <%= b.timeline %></small></p>
-			    </div>
-			</div>
-		  <% end %>  
+				  <% @user.courses.each do |b| %>
+					<div class="card col-lg-4">
+					    <%= link_to user_course_path(user_id: @user.id, id: b.id) do %>
+					      <%= image_tag b.image.thumb.url :class => "card-img-top", :alt => 'Card Image' %>
+						<% end %>
+					    <div class="card-block">
+					        <%= link_to user_course_path(user_id: @user.id, id: b.id) do %>
+					        	<h4 class="card-title"><%= b.name %></h4>
+							<% end %>
+					          <p class="card-text"> <%= b.description %> </p>
+					          <p class="card-text"><small class="text-muted"> <%= b.timeline %></small></p>
+					    </div>
+					</div>
+				  <% end %> 				
+			<% end %> 
 		</div>
 	</div>
 </div>

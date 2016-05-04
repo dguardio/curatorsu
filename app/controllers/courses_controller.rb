@@ -10,8 +10,6 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @course = Course.find(params[:id])
-    @course_mods = @course.mods ||= []  
   end
 
   # GET /courses/new
@@ -21,6 +19,17 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
+  end
+
+  def add
+     @user = User.find(params[:user_id])
+     @course = Course.find(params[:id])
+      if @user.courses.include? @course
+       redirect_to user_courses_path, notice: 'Already Enrolled.'
+      else
+       @course.users << @user
+       render 'show', notice: 'You are now Enrolled for this course.' 
+     end
   end
 
   # POST /courses
