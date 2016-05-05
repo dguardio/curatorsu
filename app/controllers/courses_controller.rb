@@ -28,7 +28,7 @@ class CoursesController < ApplicationController
        redirect_to user_courses_path, notice: 'Already Enrolled.'
       else
        @course.users << @user
-       render 'show', notice: 'You are now Enrolled for this course.' 
+       redirect_to user_course_mods_path, notice: 'You are now Enrolled for this course.' 
      end
   end
 
@@ -37,6 +37,7 @@ class CoursesController < ApplicationController
 
 
   def create
+    authorize! :create, Course
     @course = Course.new(course_params)
     @course.users << User.find(params[:user_id])
     respond_to do |format|
@@ -53,6 +54,7 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
+    authorize! :update, Course
     respond_to do |format|
       if @course.update(course_params)
         format.html { render :show, notice: 'Course was successfully updated.' }
@@ -67,6 +69,7 @@ class CoursesController < ApplicationController
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
+    authorize! :destroy, @course
     @course.destroy
     respond_to do |format|
       format.html { redirect_to courses_url, notice: 'Course was successfully destroyed.' }

@@ -27,8 +27,8 @@ class AccessPolicy
     end
 
     role :curatorx, proc { |user| user.curatorx? } do
-      can :manage, Course
-      can :manage, Mod
+      can [:read, :create], Course
+      can [:read, :create], Mod
     end
 
     # The base role with no additional conditions.

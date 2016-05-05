@@ -26,6 +26,7 @@ class ModsController < ApplicationController
   # POST /mods
   # POST /mods.json
   def create
+    authorize! :create, Mod
     @mod = Mod.new(mod_params)
     @course = Course.find(params[:course_id])
     @mod.course = @course
@@ -43,6 +44,7 @@ class ModsController < ApplicationController
   # PATCH/PUT /mods/1
   # PATCH/PUT /mods/1.json
   def update
+    authorize! :update, Mod
     respond_to do |format|
       if @mod.update(mod_params)
         format.html { render :show, notice: 'Module was successfully updated.' }
@@ -57,6 +59,7 @@ class ModsController < ApplicationController
   # DELETE /mods/1
   # DELETE /mods/1.json
   def destroy
+    authorize! :destroy, @mod
     @mod.destroy
     respond_to do |format|
       format.html { redirect_to mods_url, notice: 'Module was successfully destroyed.' }

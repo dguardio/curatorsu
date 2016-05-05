@@ -6,8 +6,7 @@
 			<h5> <%= @course.description %> </h5>
 		</div>
 
-		<!-- TODO  -->
-		<!-- Add Introductory Video on Course Show Page and Display Course Image if Video Not Available -->
+<!-- Show First Introductory Video on Course Page -->
 		<div class="course-subhead row">
 	  		<div class="col-lg-9 col-md-12 col-sm-12">
 	  			<%if @course_mods.present? %>
@@ -27,7 +26,7 @@
 	  		  	<% end %>
 		  	   <% if can? :create && :update, Mod %>
 				<%= link_to 'Back', :back, class: "btn btn-primary" %><br>
-				<%= link_to 'Edit Course Details', edit_user_course_path, class: "btn btn-primary" %><br>
+				<%= link_to 'Edit Course Details', edit_user_course_path(id: @course.id), class: "btn btn-primary" %><br>
 				<%= link_to 'Add New Module', new_user_course_mod_path(course_id: @course.id), class: "btn btn-primary"%><br>
 			   <% else %>
 				<%= link_to 'Start this Course here!', add_user_course_path(id: @course.id), class: "btn btn-primary" %>
@@ -37,6 +36,8 @@
 		</div>
 	</div>
 <hr>
+
+<!-- Display All Course Modules on horizontal bar-->
 	<div class="mod-preview row-horizon row">
 		<% if @course_mods.nil? %>
 			<p>Modules Coming Soon</p>
