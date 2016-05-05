@@ -11,58 +11,68 @@
 			<% if current_user.present? %>
 				<center><%= link_to 'Your Classroom', user_path(current_user.id), class: "btn btn-primary btn-dir" %></center>
 			<% else %>
-				<%= simple_form_for(resource, as: resource_name, url: registration_path(resource), html: {class: "form-horizontal form-user"}) do |f| %>
-				  <%= devise_error_messages! %>
+				<div class="landing-action">
+					<div class="landing-signup">
+						<%= simple_form_for(resource, as: resource_name, url: registration_path(resource), html: {class: "form-horizontal form-user"}) do |f| %>
+						  <%= devise_error_messages! %>
 
-				  <div class="form-group">
-				  	<%= f.label :first_name, "", class: "control-label col-md-4" %>
-				    <div class="col-md-8">
-				      <%= f.input_field :first_name, :placeholder => 'First Name', class: "text-field form-control", html: {spellcheck: "false"} %>
-				    </div>
-				  </div>
+						  <div class="form-group">
+						  	<%= f.label :first_name, "", class: "control-label col-md-4" %>
+						    <div class="col-md-8">
+						      <%= f.input_field :first_name, :placeholder => 'First Name', class: "text-field form-control", html: {spellcheck: "false"} %>
+						    </div>
+						  </div>
 
 
-				  <div class="form-group">
-				  	<%= f.label :last_name, "", class: "control-label col-md-4" %>
-				    <div class="col-md-8">
-				      <%= f.input_field :last_name, :placeholder => 'Last Name', class: "text-field form-control", html: {spellcheck: "false"} %>
-				    </div>
-				  </div>
-				  
-				  <div class="form-group">
-				  	<%= f.label :email, class: "control-label col-md-4" %>
-				    <div class="col-md-8">
-				      <%= f.email_field :email, :placeholder => 'E-mail', class: "text-field form-control", html: {spellcheck: "false"} %>
-				    </div>
-				  </div>
-				    
-				  <div class="form-group">
-				  	<%= f.label :password, class: "control-label col-md-4" %>
-				    <div class="col-md-8">
-				      <%= f.password_field :password, :placeholder => 'Enter Password', class: "text-field form-control", html: {autocomplete: "off"} %>
-				    </div>
-				  </div>
-				     
-				  <div class="form-group">
-				  	<%= f.label :password_confirmation, "", class: "control-label col-md-4" %>
-				    <div class="col-md-8">
-				      <%= f.password_field :password_confirmation, :placeholder => 'Password Again', class: "text-field form-control", html: {autocomplete: "off"} %>
-				    </div>
-				  </div>
-				     
-				  <div class="form-group">
-				    <div class="col-md-8">
-				      <%= f.submit "Sign Up", class: "btn btn-primary" %>
-				    </div>
-				  </div>
+						  <div class="form-group">
+						  	<%= f.label :last_name, "", class: "control-label col-md-4" %>
+						    <div class="col-md-8">
+						      <%= f.input_field :last_name, :placeholder => 'Last Name', class: "text-field form-control", html: {spellcheck: "false"} %>
+						    </div>
+						  </div>
+						  
+						  <div class="form-group">
+						  	<%= f.label :email, class: "control-label col-md-4" %>
+						    <div class="col-md-8">
+						      <%= f.email_field :email, :placeholder => 'E-mail', class: "text-field form-control", html: {spellcheck: "false"} %>
+						    </div>
+						  </div>
+						    
+						  <div class="form-group">
+						  	<%= f.label :password, class: "control-label col-md-4" %>
+						    <div class="col-md-8">
+						      <%= f.password_field :password, :placeholder => 'Enter Password', class: "text-field form-control", html: {autocomplete: "off"} %>
+						    </div>
+						  </div>
+						     
+						  <div class="form-group">
+						  	<%= f.label :password_confirmation, "", class: "control-label col-md-4" %>
+						    <div class="col-md-8">
+						      <%= f.password_field :password_confirmation, :placeholder => 'Password Again', class: "text-field form-control", html: {autocomplete: "off"} %>
+						    </div>
+						  </div>
+						     
+						  <div class="form-group">
+						    <div class="col-md-8">
+						      <%= f.submit "Sign Up", class: "btn btn-primary" %>
+						    </div>
+						  </div>
 
-				  <div class="form-group">
-				    <div class="col-md-8">
-				      <%= render "devise/shared/links" %>
-				    </div>
-				  </div>
+						  <div class="form-group">
+						    <div class="col-md-8">
+						      <%= render "devise/shared/links" %>
+						    </div>
+						  </div>
 
-				<% end %>	
+						<% end %>								
+					</div>
+
+					<div class="landing-card">
+						<strong><p>New to CuratorsU?</p></strong>
+						<p><small>Sign up to take a Course</small></p>
+						<button class="btn btn-primary btn-switch">Sign Up</button>
+					</div>				
+				</div>
 			<% end %>
 		</div>
 	</div>

@@ -43,6 +43,29 @@
 	color: white;
 
 }
+
+.landing-signup {
+	display: none;
+}
+
+.landing-card {
+	vertical-align: middle;
+	height: 250px;
+	width: 300px;
+	background-color: #00C3FF;
+	border-radius: 10px 10px 10px 10px;
+	font-size: 25px;
+	text-align: center;
+	padding-top: 20px;
+	margin-top: 45px;
+}
+
+.landing-card .btn-switch {
+	color: #00C3FF;
+	background-color: white;
+	margin-top: 50px;
+}
+
 .landing-form .btn-primary {
 	width: 262px;
 	font-size: 20px;
