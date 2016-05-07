@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
 
+
   private
   
   #-> Prelang (user_login:devise)

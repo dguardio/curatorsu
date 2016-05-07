@@ -39,12 +39,10 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 gem 'rmagick'
 gem 'bundler'
-
 gem 'delayed_job_active_record'
 gem 'binding_of_caller'
 gem 'simple_form'
-gem 'activeadmin', github: 'gregbell/active_admin'
-gem "devise", "~> 3.2.2"
+gem "devise"
 gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
 gem 'rails_config'
@@ -53,10 +51,7 @@ gem 'omniauth-facebook'
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'access-granted', '~> 1.0.0'
-
-group :development do
-  gem 'better_errors'
-end
+gem 'rails_admin'
 
 group :development, :test do
   gem 'dotenv-rails'
