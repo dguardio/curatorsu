@@ -52,6 +52,7 @@ gem 'validates_formatting_of'
 gem 'tzinfo-data'
 gem 'access-granted', '~> 1.0.0'
 gem 'rails_admin'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'dotenv-rails'
