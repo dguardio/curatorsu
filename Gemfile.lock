@@ -81,6 +81,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     font-awesome-rails (4.6.2.0)
       railties (>= 3.2, < 5.1)
+    formtastic (3.1.4)
+      actionpack (>= 3.2.13)
     haml (4.0.7)
       tilt
     hashie (3.4.3)
@@ -252,6 +254,7 @@ DEPENDENCIES
   delayed_job_active_record
   devise
   dotenv-rails
+  formtastic
   hirb
   jbuilder (~> 2.0)
   jquery-rails

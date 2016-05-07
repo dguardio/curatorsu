@@ -53,6 +53,7 @@ gem 'tzinfo-data'
 gem 'access-granted', '~> 1.0.0'
 gem 'rails_admin'
 gem 'rails_12factor'
+gem 'formtastic'
 
 group :development, :test do
   gem 'dotenv-rails'
