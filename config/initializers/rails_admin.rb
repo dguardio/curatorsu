@@ -8,8 +8,16 @@ RailsAdmin.config do |config|
   # end
   # config.current_user_method(&:current_user)
 
+  config.authorize_with do
+    if current_user.nil?
+      redirect_to main_app.root_path
+    else
+      redirect_to main_app.root_path unless current_user.role == 'curator'      
+    end
+  end
+
   ## == Cancan ==
-  # config.authorize_with :cancan
+  # config.authorize_with :access_granted
 
   ## == Pundit ==
   # config.authorize_with :pundit
