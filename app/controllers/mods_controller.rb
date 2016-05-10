@@ -62,7 +62,7 @@ class ModsController < ApplicationController
     authorize! :destroy, @mod
     @mod.destroy
     respond_to do |format|
-      format.html { redirect_to mods_url, notice: 'Module was successfully destroyed.' }
+      format.html { redirect_to user_course_mods_path, notice: 'Module was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

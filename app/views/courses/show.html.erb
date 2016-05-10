@@ -1,4 +1,4 @@
-<div class="yielder">
+<div class="yielder container">
 <% @user ||= current_user %>
 	<div class="course-info">
 		<div class="course-header row">
@@ -8,9 +8,9 @@
 
 <!-- Show First Introductory Video on Course Page -->
 		<div class="course-subhead row">
-	  		<div class="col-lg-9 col-md-12 col-sm-12">
-	  			<%if @course_mods.present? %>
-	  				<%= embed_video(@course_mods.first.video) %>
+	  		<div class="col-lg-9 col-md-9 col-sm-12">
+	  			<%if @course.mods.present? %>
+	  				<%= embed_video(@course.mods.first.video) %>
 	  			<% else %>
 	  				<%= image_tag @course.image.thumb.url :class => "course-img img-responsive" %>
 	  			<% end %>
@@ -19,10 +19,10 @@
 	  		  	<p> <strong>Duration: </strong> <br> <%= @course.timeline %> </p>
 	  		  	<p> <strong> Instructor(s): </strong> <br> <%= @course.instructors %> </p>
 	  		  	<p> <strong>Lectures:</strong><br> 
-	  		  	<% if @course_mods.nil? %>
+	  		  	<% if @course.mods.nil? %>
 	  		  		<p>No Course Modules added yet</p>
 	  		  	<% else %>
-	  		  		<p> contains <%= @course_mods.count %> Modules </p>
+	  		  		<p> contains <%= @course.mods.count %> Modules </p>
 	  		  	<% end %>
 		  	   <% if can? :create && :update, Mod %>
 				<%= link_to 'Back', :back, class: "btn btn-primary" %><br>
@@ -39,10 +39,10 @@
 
 <!-- Display All Course Modules on horizontal bar-->
 	<div class="mod-preview row-horizon row">
-		<% if @course_mods.nil? %>
+		<% if @course.mods.nil? %>
 			<p>Modules Coming Soon</p>
 		<% else %>
-			<% @course_mods.each do |mod| %>
+			<% @course.mods.each do |mod| %>
 			  <div class="col-sm-6">
 			    <div class="card card-block">
 			      <h3 class="card-title"> <%= mod.name %> </h3>

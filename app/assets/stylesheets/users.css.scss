@@ -35,8 +35,9 @@ div .card {
 }
 
 .user-bar {
-	position: fixed;
-	padding-left: 100px;
+	position: relative;
+	width: 200px;
+	height: 250px;
 }
 
 .user-bar img {
