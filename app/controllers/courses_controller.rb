@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
      @user = User.find(params[:user_id])
      @course = Course.find(params[:id])
       if @user.courses.include? @course
-       redirect_to user_courses_path, notice: 'Already Enrolled.'
+       redirect_to user_course_mods_path, notice: 'Already Enrolled.'
       else
        @course.users << @user
        redirect_to user_course_mods_path, notice: 'You are now Enrolled for this course.' 
