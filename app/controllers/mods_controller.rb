@@ -75,6 +75,6 @@ class ModsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mod_params
-      params.require(:mod).permit(:name, :description, :post, :course_id, :video, :soundcloud_track)
+      params.require(:mod).permit(:name, :description, :post, :course_id, :video, :soundcloud_track, :document)
     end
 end

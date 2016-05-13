@@ -1,3 +1,4 @@
+<% @doc = root_url.chop + @mod.document_url%>
 <a href="#">Course Video</a>
 <a href="#">Display Notes</a>
 <a href="#">Course Audio</a>
@@ -12,6 +13,12 @@
 
 <div class="notes">
 	<%= @mod.post %>
+</div>
+
+<div class="docs">
+	<iframe src="https://docs.google.com/viewer?url=<%= @doc -%>&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
+	<%= @doc %>
+	<%= root_path + @mod.document_url %>
 </div>
 
 <% if can? :create && :update, Mod %>
