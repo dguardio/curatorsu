@@ -16,29 +16,43 @@
 <!-- This Div contains the various courses that a Curator manages or that a User has enrolled for. -->
 	<div class="col-lg-8 col-md-8 col-sm-12">
 		<div class="row">
-			<% if @user.courses.empty? and @user.role == 'user' %>
+		<% if @user.courses.empty? and @user.role == 'user' %>
+			<div class="single_course">
+				<p><%= image_tag("culogo.png")%></p>
 				<p> We see you haven't taken any courses yet </p>
-				<p> Visit our Catalog <%= link_to 'Here', user_courses_path(user_id: @user.id) %> to choose one.</p>
-			<% elsif @user.courses.empty? and @user.role == 'curator' || 'curatorx'  %>
-				<p> Once you create a Course, that Course can be easily accessed here if you need to edit it later on.</p>
-				<p> Think of this as a dosser of all the courses you create here.</p>
-				<p> <%= link_to 'Create a New Course', new_user_course_path(user_id: @user.id) %> </p>
- 			<% else %>
-			  <% @user.courses.each do |b| %>
-				<div class="card col-lg-4">
-				    <%= link_to user_course_path(user_id: @user.id, id: b.id) do %>
-				      <%= image_tag b.image.thumb.url :class => "card-img-top", :alt => 'Card Image' %>
-					<% end %>
-				    <div class="card-block">
-				        <%= link_to user_course_path(user_id: @user.id, id: b.id) do %>
-				        	<h4 class="card-title"><%= b.name %></h4>
-						<% end %>
-				          <p class="card-text"> <%= b.description %> </p>
-				          <p class="card-text"><small class="text-muted"> <%= b.timeline %></small></p>
-				    </div>
-				</div>
-			  <% end %> 					
-			<% end %> 
+				<p> Visit our Catalog <%= link_to 'Here', user_courses_path(user_id: @user.id), class: "course_more" %> to choose one.</p>
+			</div>
+		<% elsif @user.courses.empty? and @user.role == 'curator' || 'curatorx'  %>
+			<div class="single_course">
+				<p><%= image_tag("culogo.png")%></p>
+				<p>Once you create a course, that course can be easily accessed here for editing later on</p>
+				<p> <%= link_to 'Create a New Course', new_user_course_path(user_id: @user.id), class:"course_more" %> </p>
+			</div>
+		<% else %>
+			<% @user.courses.each do |course| %>
+		        <!-- start single course -->
+		        <div class="col-lg-6 col-md-6 col-sm-6">
+		          <div class="single_course wow fadeInUp">
+		            <div class="singCourse_imgarea">
+					    <%= image_tag course.image.normal.url %>
+		              <div class="mask">                         
+		                <%= link_to 'View Course', user_course_path(user_id: @user.id, id: course.id ), class:"course_more" %>
+		              </div>
+		            </div>
+		            <div class="singCourse_content">
+		            <h3 class="singCourse_title"><%= link_to course.name, user_course_path(user_id: @user.id, id: course.id) %></h3>
+		            <p class="singCourse_price"><span>$20</span> <%= course.timeline %></p>
+		            <p><%= course.description%></p>
+		            </div>
+		            <div class="singCourse_author">
+		              <img src="img/author.jpg" alt="img">
+		              <p><%= course.instructors%></p>
+		            </div>
+		          </div>
+		        </div>
+		        <!-- End single course -->
+		    <% end %>
+		<% end %>
 		</div>
 	</div>
 </div>
