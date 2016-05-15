@@ -35,6 +35,8 @@ gem 'video_info'
 gem 'hirb'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'ahoy_matey'
+gem 'pdfjs_rails'
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
 gem 'rmagick'

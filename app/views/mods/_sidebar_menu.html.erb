@@ -1,7 +1,10 @@
-	<div id="module-name">
+<div class="module-name panel">
+<!-- TODO Add Visualization to show Percent Accomplished -->
 	<% unless @all.nil? %>
 		<% @all.each do |mod|%>
-			<%= link_to mod.name, user_course_mod_path(id: mod.id) %>
+			<div class="module-status">
+				<%= link_to mod.name, user_course_mod_path(id: mod.id)%>
+			</div>
 		<% end %>
 	<% end %>
-	</div>
+</div>

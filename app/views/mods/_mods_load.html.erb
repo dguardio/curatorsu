@@ -1,4 +1,6 @@
-<% @doc = root_url.chop + @mod.document_url%>
+<% unless @doc.nil? %> 
+	<% @doc = root_url.chop + @mod.document_url%>
+<% end %>
 <a href="#">Course Video</a>
 <a href="#">Display Notes</a>
 <a href="#">Course Audio</a>
@@ -16,9 +18,9 @@
 </div>
 
 <div class="docs">
-	<iframe src="https://docs.google.com/viewer?url=<%= @doc -%>&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
+	<iframe src="/pdfjs/web/viewer.html?file=<%=h @mod.document_url%>" style="border: 0" width="854" height="480" frameborder="0" scrolling="yes"></iframe>
+
 	<%= @doc %>
-	<%= root_path + @mod.document_url %>
 </div>
 
 <% if can? :create && :update, Mod %>

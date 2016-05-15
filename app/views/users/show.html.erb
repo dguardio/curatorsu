@@ -3,14 +3,23 @@
 <!-- Here is the User bar to show various options and useful links -->
 	<div class="col-lg-4 col-md-4 col-sm-12">
 		<div class="user-bar">
-		  <div class="panel">
 		  	<%= image_tag @user.image.thumb.url %><br>
 			<p> Hi <%= @user.first_name %>, </p>
 
 			<% if can? :create, Course %>
-				<%= link_to 'Create New Course', new_user_course_path(user_id: @user.id) %>
+				<%= link_to new_user_course_path(user_id: @user.id) do %>
+					<p><%= image_tag("add.png") %>
+					Add a New Course</p>
+				<% end %>
 			<% end %>
-		  </div>
+				<%= link_to do %>
+					<p><%= image_tag("help.png") %>
+					Check Our Guide</p>
+				<% end %>
+				<%= link_to user_courses_path(user_id: @user.id) do %>
+					<p><%= image_tag("catalog.png") %>
+					Course Catalog</p>
+				<% end %>
 		</div>
 	</div>
 <!-- This Div contains the various courses that a Curator manages or that a User has enrolled for. -->

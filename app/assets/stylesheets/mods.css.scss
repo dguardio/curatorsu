@@ -1,5 +1,15 @@
+/*Sidebar*/
+.module-name {
+
+}
+
+.module-status {
+	border-left: thick solid #00C3FF;
+	line-height: 30px;
+}
 
 
+/*Content Bar*/
 .videos {
 	
 }
@@ -9,5 +19,9 @@
 }
 
 .notes {
+	display: none;
+}
+
+.docs {
 	display: none;
 }

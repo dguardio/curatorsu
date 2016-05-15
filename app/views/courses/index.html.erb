@@ -1,28 +1,40 @@
 <div class="yielder container">
-  <div class="filter col-lg-3">
+<!--   <div class="filter col-lg-3">
     
-  </div>
-  <div class="all-courses col-lg-9">
+  </div> 
+  TODO
+  Add Filter and Search Functionailty here.
+  -->
+<!--   <div class="all-courses col-lg-9"> -->
     <div class="row">
       <% @courses.each do |course| %>
-        <div class="card card-block col-lg-4">
-          <%= link_to user_course_path(id: course.id) do %>
-            <%= image_tag course.image.thumb.url :class => "card-img-top row", :alt => 'Card Image' %>
-          <% end %>
-            <div class="card-content">
-              <h3 class="card-title"> <%= course.name %> </h3>
-              <p class="card-text"> <%= course.description%> </p>
-              <p class="card-text"> <%= course.timeline %> </p>
-              <p class="card-text"><small class="text-muted"> <%= course.instructors %> </small></p>
+            <!-- start single course -->
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="single_course wow fadeInUp">
+                <div class="singCourse_imgarea">
+              <%= image_tag course.image.normal.url %>
+                  <div class="mask">                         
+                    <%= link_to 'View Course', user_course_path(id: course.id ), class:"course_more" %>
+                  </div>
+                </div>
+                <div class="singCourse_content">
+                <h3 class="singCourse_title"><%= link_to course.name, user_course_path(id: course.id) %></h3>
+                <p class="singCourse_price"><span>$20</span> </p>
+                <p><%= course.description%></p>
+                <p><strong><%= course.timeline %></strong></p>
+                </div>
+                <div class="singCourse_author">
+                  <!-- <img src="img/author.jpg" alt="img"> -->
+                  <p>Instructor(s): <%= course.instructors%></p>
+                </div>
+                  <% if current_user.role == "curator" %>
+                    <%= link_to 'Edit Course Information', edit_user_course_path(id: course.id), class: "btn btn-primary" %>
+                  <% end %>                
+              </div>
             </div>
-          <% if current_user.role == "curator" %>
-            <%= link_to 'Edit Course Information', edit_user_course_path(id: course.id), class: "btn btn-primary" %>
-          <% else %>
-            <p> <%= link_to 'View this Course', user_course_path(id: course.id), class: "btn btn-primary" %> </p>
-          <% end %>
-        </div>
-      <% end %>
+            <!-- End single course -->
+        <% end %>      
     </div>  
-  </div>
+<!--   </div> -->
 
 </div>
