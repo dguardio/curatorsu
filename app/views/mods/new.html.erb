@@ -1,6 +1,6 @@
 <div class="yielder">
-	<h1>New mod</h1>
-	<%= simple_form_for(@mod, url: user_course_mods_path, html: {method: :post, multipart: true }) do |f| %>
+	<h1>Create a new Module </h1>
+	<%= simple_form_for(@mod, url: user_course_mods_path, html: {method: :post, multipart: true, class: "form-mod" }) do |f| %>
 	  <%= f.error_notification %>
 	  <%= render 'form', f: f %>
 	<% end %>

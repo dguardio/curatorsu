@@ -19,8 +19,6 @@
 
 <div class="docs">
 	<iframe src="/pdfjs/web/viewer.html?file=<%=h @mod.document_url%>" style="border: 0" width="854" height="480" frameborder="0" scrolling="yes"></iframe>
-
-	<%= @doc %>
 </div>
 
 <% if can? :create && :update, Mod %>

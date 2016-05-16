@@ -25,3 +25,22 @@
 .docs {
 	display: none;
 }
+
+/*Form Styles only*/
+.form-mod {
+	width: 450px; 
+	height: 500px;
+	margin-right: auto; 
+	margin-left: auto; 
+}
+
+.form-mod .control-label {
+	display: none;
+}
+
+.form-mod .form-action {
+	text-align: center;
+	vertical-align: middle;
+	align-self: center;
+	width: 100%;
+}

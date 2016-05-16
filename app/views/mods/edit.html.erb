@@ -1,6 +1,6 @@
 <div class="yielder">
 	<h1>Editing mod</h1>
-	<%= simple_form_for @mod, url: {action: 'update', multipart: true } do |f| %>
+	<%= simple_form_for @mod, url: {action: 'update', multipart: true, class: "form-mod"} do |f| %>
 	  <%= f.error_notification %>
 		<%= render 'form', f: f %>
 	<% end %>
