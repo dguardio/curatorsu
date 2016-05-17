@@ -4,8 +4,8 @@ class ModsController < ApplicationController
   # GET /mods
   # GET /mods.json
   def index
-    @mods = Mod.all
     @course = Course.find(params[:course_id])
+    @mods = @course.mods
   end
 
   # GET /mods/1
