@@ -44,7 +44,7 @@ gem 'bundler'
 gem 'delayed_job_active_record'
 gem 'binding_of_caller'
 gem 'simple_form'
-gem "devise"
+gem 'devise'
 gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
 gem 'rails_config'
