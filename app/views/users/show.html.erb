@@ -3,8 +3,12 @@
 <!-- Here is the User bar to show various options and useful links -->
 	<div class="col-lg-4 col-md-4 col-sm-12">
 		<div class="user-bar">
-		  	<%= image_tag @user.image.thumb.url %><br>
-			<p> Hi <%= @user.first_name %>, </p>
+			<% if @user.image.thumb.url.nil? %>
+				<%= image_tag("profile.png", :class => "profile") %>
+			<% else %>
+		  		<%= image_tag @user.image.thumb.url %><br>
+			<% end %>
+				<p> Hi <%= @user.first_name %>, </p>
 
 			<% if can? :create, Course %>
 				<%= link_to new_user_course_path(user_id: @user.id) do %>
@@ -33,7 +37,7 @@
 			</div>
 		<% elsif @user.courses.empty? and @user.role == 'curator' || 'curatorx'  %>
 			<div class="single_course">
-				<p><%= image_tag("culogo.png")%></p>
+				<p><%= image_tag("choices.jpg")%></p>
 				<p>Once you create a course, that course can be easily accessed here for editing later on</p>
 				<p> <%= link_to 'Create a New Course', new_user_course_path(user_id: @user.id), class:"course_more" %> </p>
 			</div>

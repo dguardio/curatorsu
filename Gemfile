@@ -56,6 +56,8 @@ gem 'access-granted', '~> 1.0.0'
 gem 'rails_admin'
 gem 'rails_12factor'
 gem 'formtastic'
+gem 'bootstrap-datepicker-rails'
+gem 'validates_timeliness', '~> 4.0'
 
 group :development, :test do
   gem 'dotenv-rails'
