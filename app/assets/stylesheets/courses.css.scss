@@ -27,4 +27,13 @@ div .course-header {
 	padding-left: 100px;
 	padding-right: 50px;
 	width: 100%;
+	overflow-wrap: normal;
+}
+
+.mod-preview .card {
+	width: 200px;
+}
+
+.mod-preview .btn {
+	width: 200px;	
 }

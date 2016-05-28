@@ -30,7 +30,7 @@
 				<%= link_to 'Add New Module', new_user_course_mod_path(course_id: @course.id), class: "btn btn-primary"%><br>
 				<%= link_to 'Start Course', user_course_mods_path(course_id: @course.id ), class: "btn btn-primary" %>
 			   <% else %>
-				<%= link_to 'Start Course here!', add_user_course_path(id: @course.id), class: "btn btn-primary" %>
+				<%= link_to 'Start Course here!', add_user_course_path(course_id: @course.id), class: "btn btn-primary" %>
 			   <% end %>
 	  		</div>
 
@@ -44,7 +44,7 @@
 			<p>Modules Coming Soon</p>
 		<% else %>
 			<% @course.mods.each do |mod| %>
-			  <div class="col-sm-6">
+			  <div class="col-sm-4">
 			    <div class="card card-block">
 			      <h3 class="card-title"> <%= mod.name %> </h3>
 			      <p class="card-text"><%= mod.description %></p>
