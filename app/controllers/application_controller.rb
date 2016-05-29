@@ -17,6 +17,9 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: "You don't have permission to do that!"
   end
 
+  def featured
+    @courses = Course.last(4).reverse
+  end
 
 
   

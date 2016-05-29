@@ -81,4 +81,18 @@
 			<% end %>
 		</div>
 	</div>
+	<div class="row container">
+	  <% @courses.each do |course| %>
+		<div class="col-lg-6 col-md-6 col-sm-6">
+			<div class="featured-course">
+				<%= image_tag course.image.large.url%>
+				<div class="name">
+					<strong><%= course.name %></strong>
+					<p class="text-muted"><%= course.description %></p>	
+				</div>
+			</div>
+			<div></div>
+		</div>
+	  <% end %>
+	</div>
 </div>

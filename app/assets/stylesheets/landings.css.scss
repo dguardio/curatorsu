@@ -81,3 +81,34 @@
 	height: 50px;
 	vertical-align: middle;
 }
+
+.featured-course {
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+}
+
+.featured-course img {
+	position: relative;
+	width: 100%;
+}
+
+.featured-course img:after {
+  content: " ";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.featured-course .name {
+	position: absolute;
+	top: 140px;
+	left: 330px;
+	width: 30%;
+	color: white
+}
