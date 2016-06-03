@@ -85,12 +85,16 @@
 .featured-course {
 	margin-left: auto;
 	margin-right: auto;
-	width: 60%;
+	width: 100%;
 }
 
 .featured-course img {
 	position: relative;
-	width: 100%;
+	transition: transform 1s;
+}
+
+.featured-course img:hover {
+  transform: translate(20px, 20px);
 }
 
 .featured-course img:after {

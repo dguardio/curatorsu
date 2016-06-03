@@ -31,14 +31,11 @@
 		<div class="row">
 		<% if @user.courses.empty? and @user.role == 'user' %>
 			<div class="single_course">
-				<p><%= image_tag("culogo.png")%> <br>
-				 We see you haven't taken any courses yet. Visit our Catalog <%= link_to 'Here', user_courses_path(user_id: @user.id), class: "course_more" %> to choose one.</p>
+				<%= link_to image_tag("no-course.png"), user_courses_path(user_id: @user.id), class: "no-course" %>
 			</div>
 		<% elsif @user.courses.empty? and @user.role == 'curator' || 'curatorx'  %>
 			<div class="single_course">
-				<p><%= image_tag("choices.jpg")%></p>
-				<p>Once you create a course, that course can be easily accessed here for editing later on</p>
-				<p> <%= link_to 'Create a New Course', new_user_course_path(user_id: @user.id), class:"course_more" %> </p>
+				<%= link_to image_tag("no-course.png"), user_courses_path(user_id: @user.id), class: "no-course" %>
 			</div>
 		<% else %>
 			<% @user.courses.each do |course| %>

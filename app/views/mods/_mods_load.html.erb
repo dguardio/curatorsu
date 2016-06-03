@@ -1,9 +1,6 @@
 <% unless @doc.nil? %> 
 	<% @doc = root_url.chop + @mod.document_url%>
 <% end %>
-<a href="#">Course Video</a>
-<a href="#">Display Notes</a>
-<a href="#">Course Audio</a>
 
 <div class="videos">
 	<%= embed_video(@mod.video) %>
@@ -24,4 +21,4 @@
 <% if can? :create && :update, Mod %>
 <%= link_to 'Edit', edit_user_course_mod_path(id: @mod.id) %> |
 <% end %>
-<%= link_to 'Back', :back %>
+

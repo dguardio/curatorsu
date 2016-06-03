@@ -10,21 +10,7 @@
 
 
 /*Content Bar*/
-.videos {
-	
-}
 
-.audios {
-	display: none;
-}
-
-.notes {
-	display: none;
-}
-
-.docs {
-	display: none;
-}
 
 /*Form Styles only*/
 .form-mod {
@@ -39,6 +25,24 @@
 }
 
 .form-mod .form-action {
+	text-align: center;
+	vertical-align: middle;
+	align-self: center;
+	width: 100%;
+}
+
+.edit_mod {
+	width: 450px; 
+	height: 500px;
+	margin-right: auto; 
+	margin-left: auto; 
+}
+
+.edit_mod .control-label {
+	display: none;
+}
+
+.edit_mod .form-action {
 	text-align: center;
 	vertical-align: middle;
 	align-self: center;
