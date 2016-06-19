@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
   end
 
   def view
-    @course = Course.find(params[:id])
+    @course = Course.find(params[:id])  
   end
 
   # GET /courses/new
