@@ -1,5 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   include ApplicationHelper
+  before_action :set_courses
 
   def create
       build_resource(sign_up_params)
@@ -28,5 +29,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def edit
     super
+  end
+
+  private
+
+  def set_courses
+    @courses = Course.all
   end
 end

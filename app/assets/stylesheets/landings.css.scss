@@ -82,6 +82,14 @@
 	vertical-align: middle;
 }
 
+#fcs {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-left: 100px;
+	margin-right: 0px;
+	padding-left: 50px;
+}
+
 .featured-course {
 	margin-left: auto;
 	margin-right: auto;
@@ -111,8 +119,10 @@
 
 .featured-course .name {
 	position: absolute;
-	top: 140px;
-	left: 330px;
+	top: 112px;
+	left: 193px;
 	width: 30%;
-	color: white
+	color: white;
+	width: 200px;
+	background-color: #00C3FF;
 }

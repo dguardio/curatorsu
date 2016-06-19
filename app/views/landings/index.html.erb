@@ -83,17 +83,21 @@
 	</div>
 </div>
 <!-- Place in a Featured Course section -->
-<div class="row container fcs">
-  <% @courses.each do |course| %>
-	<div class="col-lg-6 col-md-6 col-sm-6">
-		<div class="featured-course">
-			<%= image_tag course.image.normal.url%>
-			<div class="name">
-				<strong><%= course.name %></strong>
-				<p class="text-muted"><%= course.description %></p>	
+<div class="container row" id="fcs">
+	<div class="fcs">
+	  <% @courses.each do |course| %>
+		<div class="col-lg-6 col-md-6 col-sm-6">
+			<div class="featured-course">
+			<%= link_to view_path(id: course.id ) do %>
+				<%= image_tag course.image.normal.url%>
+				<div class="name">
+					<h2><strong><%= course.name %></strong></h2>
+					<p><%= course.description %></p>	
+				</div>
+			<% end %>
 			</div>
+			<div></div>
 		</div>
-		<div></div>
+	  <% end %>
 	</div>
-  <% end %>
 </div>
