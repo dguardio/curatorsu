@@ -4,11 +4,13 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
+    @courses = Course.all
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @courses = Course.all
   end
 
   def view
@@ -18,6 +20,7 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+    @courses = Course.all
   end
 
   # GET /courses/1/edit
@@ -26,6 +29,7 @@ class CoursesController < ApplicationController
 
   def add
      @user = User.find(params[:user_id])
+     @courses = Course.all
      @course = Course.find(params[:id])
       if @user.courses.include? @course
        redirect_to user_course_mods_path(course_id: @course.id), notice: 'Already Enrolled.'
@@ -41,6 +45,7 @@ class CoursesController < ApplicationController
 
   def create
     authorize! :create, Course
+    @courses = Course.all
     @course = Course.new(course_params)
     @course.users << User.find(params[:user_id])
     respond_to do |format|

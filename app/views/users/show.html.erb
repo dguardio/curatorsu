@@ -52,7 +52,7 @@
 		            <h3 class="singCourse_title"><%= link_to course.name, user_course_path(user_id: @user.id, id: course.id) %></h3>
 		            <p class="singCourse_price"><span>$20</span> </p>
 		            <p><%= course.description%></p>
-		            <p><strong><%= course.timeline %></strong></p>
+		            <p><strong>Class Starts:  <%= course.timeline %></strong></p>
 		            </div>
 		            <div class="singCourse_author">
 		              <!-- <img src="img/author.jpg" alt="img"> -->
